@@ -17,6 +17,7 @@ gem "jquery-rails"
 gem 'debugger'
 gem 'haml'
 
+
 group :test do
   gem "cucumber-rails", ">= 1.3.0", :require => false
   gem "capybara", ">= 1.1.2"
