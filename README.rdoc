@@ -1,3 +1,9 @@
 = WysiwygDocs
 
 This project rocks and uses MIT-LICENSE.
+
+= Installation
+
+rake wysiwyg_docs:install:migrations
+
+
