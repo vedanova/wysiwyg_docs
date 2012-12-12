@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     wysiwyg_docs (0.0.1)
-      rails (~> 3.2.9)
+      rails (>= 3.2.8)
 
 GEM
   remote: http://rubygems.org/
