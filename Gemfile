@@ -16,6 +16,9 @@ gem "jquery-rails"
 # To use debugger
 gem 'debugger'
 gem 'haml'
+gem 'sass-rails', '~> 3.2'
+gem "bootstrap-sass", ">= 2.1.0.0"
+gem 'bootstrap-wysihtml5-rails'
 
 
 group :test do
