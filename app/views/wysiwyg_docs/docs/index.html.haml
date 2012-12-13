@@ -1,25 +1,13 @@
-%section
-  .span10
-    - if current_user && current_user.admin?
-      = form_for @doc do |form|
-        - if @doc.present?
-          = render :partial =>  "shared/editor", locals: {content: @doc.content, form: form}
-        - else
-          = render :partial =>  "shared/editor", locals: {content: "No content yet", form: form}
-
-    - else
+.span9
+  - if current_user && current_user.admin?
+    = form_for @doc do |form|
       - if @doc.present?
-        = @doc.content.html_safe
+        = render :partial =>  "shared/editor", locals: {content: @doc.content, form: form}
+      - else
+        = render :partial =>  "shared/editor", locals: {content: "No content yet", form: form}
 
-  .span2
-    %h4
-      = WysiwygDocs.sidebar_title
-    .row
-      .span12
-        = link_to WysiwygDocs.sidebar_root_title, docs_path
-        %ul.topics
-          - @topics.each do |topic|
-            %li.topic
-              = topic.name
+  - else
+    - if @doc.present?
+      = @doc.content.html_safe
 
-
+= render "shared/sidebar"

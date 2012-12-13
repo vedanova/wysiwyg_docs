@@ -15,3 +15,7 @@ end
 WysiwygDocs::Doc.blueprint do
   # Attributes here
 end
+
+WysiwygDocs::Article.blueprint do
+  # Attributes here
+end

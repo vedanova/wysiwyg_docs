@@ -6,8 +6,7 @@ body.wysiwyg_docs {
   padding-left: 20px;
   padding-right: 20px;
   min-height: 100%;
-  .container {
-    width: 960px;
+  .container-fluid {
     height: 100%;
     padding-top: 10px;
   }
@@ -17,6 +16,11 @@ body.wysiwyg_docs {
   textarea, input {
     height: 100%
   }
+
+  col.link {
+      width: 75px;
+  }
+
   .wysihtml5 {
     -moz-box-sizing: border-box;
     background: none repeat scroll 0 0 transparent;
@@ -34,6 +38,14 @@ body.wysiwyg_docs {
     background-color: #d3d3d3;
   }
 
+  @media (min-width: 979px) {
+    .sidebar-nav-fixed {
+        position:fixed;
+        top:100px;
+        width:23.404%;
+        float:left;
+    }
+  }
 }
 
 

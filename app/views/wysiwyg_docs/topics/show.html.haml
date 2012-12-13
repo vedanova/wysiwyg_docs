@@ -1,9 +1,23 @@
 %p#notice= notice
 
-%p
-  %b Name:
-  = @topic.name
+%h1= @topic.name
 
-= link_to 'Edit', edit_topic_path(@topic)
-\|
-= link_to 'Back', topics_path
+%table.table.table-bordered
+  %colgroup
+    %col
+    %col.link
+    %col.link
+  %tr
+    %th Name
+    %th
+    %th
+
+  - @topic.articles.each do |article|
+    %tr
+      %td= article.title
+      %td= link_to 'Show', [@topic, article]
+      %td= link_to 'Destroy', [@topic, article], method: :delete, data: { confirm: 'Are you sure?' }
+
+
+= link_to "New article", new_topic_article_path(@topic), class: "btn"
+

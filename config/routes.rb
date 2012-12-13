@@ -1,8 +1,11 @@
 WysiwygDocs::Engine.routes.draw do
   get "docs/index"
 
-  resources :topics
-  resources :docs
+
+  resources :docs, only: [:index, :create, :update]
+  resources :topics do
+    resources :articles
+  end
 
   root to: "docs#index"
 

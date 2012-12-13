@@ -1,0 +1,14 @@
+.span9
+  - if current_user && current_user.admin?
+    = form_for [@topic, @article] do |form|
+      = form.text_field :title, class: "input-xlarge", placeholder: "Please enter a title"
+      - if @article.present?
+        = render :partial =>  "shared/editor", locals: {content: @article.content, form: form}
+      - else
+        = render :partial =>  "shared/editor", locals: {content: "No content yet", form: form}
+
+  - else
+    - if @article.present?
+      = @article.content.html_safe
+
+= render "shared/sidebar"
