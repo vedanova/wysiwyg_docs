@@ -7,3 +7,5 @@ This project rocks and uses MIT-LICENSE.
 rake wysiwyg_docs:install:migrations
 
 
+
+requires a current_user object

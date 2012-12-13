@@ -15,4 +15,4 @@
 //= require_tree .
 //= require bootstrap
 //= require bootstrap-wysihtml5
-//= require bootstrap-wysihtml5/locales
+//= require wysiwyg_docs/parser_rules/advanced.js

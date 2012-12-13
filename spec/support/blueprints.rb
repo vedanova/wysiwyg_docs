@@ -11,3 +11,7 @@ require 'machinist/active_record'
 WysiwygDocs::Topic.blueprint do
   # Attributes here
 end
+
+WysiwygDocs::Doc.blueprint do
+  # Attributes here
+end

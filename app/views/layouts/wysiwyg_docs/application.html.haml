@@ -1,0 +1,28 @@
+!!!
+%html
+  %head
+    %title Docs
+
+    %meta
+      = stylesheet_link_tag    "wysiwyg_docs/application", :media => "all"
+      = javascript_include_tag "wysiwyg_docs/application"
+      = csrf_meta_tags
+
+  %body.wysiwyg_docs
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        %ul.nav
+          %li
+            = link_to "Docs"
+          - if current_user && current_user.admin?
+            %li
+              = link_to "Topics", topics_path
+
+    #main{:role => "main"}
+      .container
+        .container-fluid
+          .row-fluid
+            .row
+              .span12
+                = yield
+
