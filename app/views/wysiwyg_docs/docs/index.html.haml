@@ -8,14 +8,15 @@
           = render :partial =>  "shared/editor", locals: {content: "No content yet", form: form}
 
     - else
-      = @doc.content.html_safe
+      - if @doc.present?
+        = @doc.content.html_safe
 
   .span2
     %h4
       = WysiwygDocs.sidebar_title
     .row
       .span12
-        = link_to "REST API reference", docs_path
+        = link_to WysiwygDocs.sidebar_root_title, docs_path
         %ul.topics
           - @topics.each do |topic|
             %li.topic

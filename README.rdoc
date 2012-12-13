@@ -7,3 +7,6 @@ This project rocks and uses MIT-LICENSE.
 rails generate wysiwyg_docs
 
 requires a current_user object
+
+require that the user object responds to admin?
+
