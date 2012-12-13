@@ -7,7 +7,7 @@
         = render :partial =>  "shared/editor", locals: {content: "No content yet", form: form}
 
   - else
-    - if @doc.present?
+    - if @doc.present? && @doc.content.present?
       = @doc.content.html_safe
 
 = render "shared/sidebar"

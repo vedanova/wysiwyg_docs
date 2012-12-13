@@ -34,12 +34,7 @@ module WysiwygDocs
         format.html { render :show }
       end
     end
-  
-    # GET /articles/1/edit
-    def edit
-      @article = Article.find(params[:id])
-    end
-  
+
     # POST /articles
     # POST /articles.json
     def create
