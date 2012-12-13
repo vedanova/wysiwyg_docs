@@ -1,4 +1,6 @@
 module WysiwygDocs
+  mattr_accessor :sidebar_title, :page_title, :index_title
+
   class Engine < ::Rails::Engine
     isolate_namespace WysiwygDocs
 

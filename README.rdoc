@@ -4,8 +4,6 @@ This project rocks and uses MIT-LICENSE.
 
 = Installation
 
-rake wysiwyg_docs:install:migrations
-
-
+rails generate wysiwyg_docs
 
 requires a current_user object

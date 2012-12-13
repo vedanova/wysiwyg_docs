@@ -11,7 +11,8 @@
       = @doc.content.html_safe
 
   .span2
-    %h4 Sidebar
+    %h4
+      = WysiwygDocs.sidebar_title
     .row
       .span12
         = link_to "REST API reference", docs_path
