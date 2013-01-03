@@ -38,6 +38,11 @@ body.wysiwyg_docs {
     background-color: #d3d3d3;
   }
 
+  #wysihtml5-editor-toolbar {
+    min-height: 88px;
+  }
+
+
   @media (min-width: 979px) {
     .sidebar-nav-fixed {
         position:fixed;
@@ -48,5 +53,38 @@ body.wysiwyg_docs {
   }
 }
 
+[data-wysihtml5-dialog] {
+    -moz-box-sizing: border-box;
+    background: none repeat scroll 0 0 #FFFBE0;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px 4px 4px 4px;
+    color: #333333;
+    font-size: 14px;
+    padding: 5px 10px;
+    text-align: center;
+    margin-top: 10px;
+}
+[data-wysihtml5-dialog] input {
+    border: 1px solid #CCCCCC;
+    color: #333333;
+    padding: 3px;
+    width: 300px;
+}
+[data-wysihtml5-dialog] input:focus {
+    border: 1px solid #666666;
+    outline: 0 none;
+}
+[data-wysihtml5-dialog-action] {
+    color: #FFFFFF;
+    cursor: pointer;
+    padding: 4px;
+}
+[data-wysihtml5-dialog-action="cancel"] {
+    color: black;
+}
 
+.wysihtml5-action-active, .wysihtml5-command-active {
+    background: none repeat scroll 0 0 #EEEEEE !important;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2) inset;
+}
 

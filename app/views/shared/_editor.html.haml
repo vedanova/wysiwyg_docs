@@ -1,8 +1,8 @@
 #editor
   = render 'shared/editor_toolbar'
-
-  = form.text_area(:content, class: 'wysihtml5', placeholder: "Enter text ...", style: "width:100%; height:100%", id: "wysihtml5-textarea")
-  = form.submit "Save", :class => 'btn btn-primary'
+  %section
+    = form.text_area(:content, class: 'wysihtml5', placeholder: "Enter text ...", style: "width:100%; height:100%", id: "wysihtml5-textarea")
+    = form.submit "Save", :class => 'btn btn-primary'
 
 :javascript
 
