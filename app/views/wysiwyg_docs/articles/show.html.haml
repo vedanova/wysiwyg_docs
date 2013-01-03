@@ -1,3 +1,8 @@
+- content_for :title do
+  = @article.title
+  |
+  = @topic.name
+
 .span9
   - if current_user && current_user.admin?
     = form_for [@topic, @article] do |form|

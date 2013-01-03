@@ -5,7 +5,13 @@
       = stylesheet_link_tag    "wysiwyg_docs/application", :media => "all"
       = javascript_include_tag "wysiwyg_docs/application"
       = csrf_meta_tags
-    %title= WysiwygDocs.page_title
+    - if content_for?(:title)
+      %title
+        =yield :title
+        |
+        = WysiwygDocs.page_title
+    - else
+      %title= WysiwygDocs.page_title
   %body.wysiwyg_docs
     .navbar.navbar-fixed-top
       .navbar-inner
