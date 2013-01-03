@@ -19,6 +19,7 @@ gem 'haml'
 gem 'sass-rails', '~> 3.2'
 gem "bootstrap-sass", ">= 2.1.0.0"
 gem 'bootstrap-wysihtml5-rails'
+gem 'friendly_id', "~> 4.0.1"
 
 
 group :test do

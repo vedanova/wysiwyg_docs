@@ -17,7 +17,7 @@ module WysiwygDocs
     # GET /articles/1
     # GET /articles/1.json
     def show
-      @article = Article.find_by_id(params[:id])
+      @article = Article.find(params[:id])
   
       respond_to do |format|
         format.html # show.html.erb
