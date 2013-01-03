@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
 //= require bootstrap
 //= require bootstrap-wysihtml5
 //= require wysiwyg_docs/parser_rules/advanced.js
+//= require bootstrap-wysihtml5/wysihtml5.js
