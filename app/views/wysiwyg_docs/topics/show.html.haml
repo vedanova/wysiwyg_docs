@@ -2,22 +2,45 @@
 
 %h1= @topic.name
 
-%table.table.table-bordered
-  %colgroup
-    %col
-    %col.link
-    %col.link
-  %tr
-    %th Name
-    %th
-    %th
-
-  - @topic.articles.each do |article|
-    %tr
-      %td= article.title
-      %td= link_to 'Show', [@topic, article]
-      %td= link_to 'Destroy', [@topic, article], method: :delete, data: { confirm: 'Are you sure?' }
+%ul#articles
+  - @topic.articles.order('position ASC').each do |article|
+    %li{ id: "article_#{article.id}"}
+      - if current_user && current_user.admin?
+        %span.handle
+          [drag]
+      =article.title
+      - if current_user && current_user.admin?
+        = link_to 'Show', [@topic, article]
+        = link_to 'Destroy', [@topic, article], method: :delete, data: { confirm: 'Are you sure?' }
 
 
 = link_to "New article", new_topic_article_path(@topic), class: "btn"
+=# javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js"
 
+- if current_user && current_user.admin?
+  :javascript
+    $(document).ready(function(){
+      $('#articles').sortable({
+        axis: 'y',
+        dropOnEmpty: false,
+        handle: '.handle',
+        cursor: 'crosshair',
+        items: 'li',
+        opacity: 0.4,
+        scroll: true,
+        update: function(){
+          $.ajax({
+          type: 'post',
+          data: $('#articles').sortable('serialize'),
+          dataType: 'script',
+          complete: function(request){
+            $('#articles').effect('highlight');
+          },
+          url: '#{sort_topic_articles_path(@topic)}'
+          })
+        }
+      });
+    });
+
+  %style
+    = ".handle:hover{cursor: move;}"

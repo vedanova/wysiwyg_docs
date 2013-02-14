@@ -4,6 +4,7 @@
       - WysiwygDocs::Topic.all.each do |topic|
         %li.nav-header.topic
           = topic.name
-          - topic.articles.order("title ASC").each do |article|
-            - klass = 'active' if current_page?(topic_article_path(topic, article))
-            %li{class: klass }= link_to(article.title, topic_article_path(topic, article))
+          %ul.sortable
+            - topic.articles.order("position ASC").each do |article|
+              - klass = 'active' if current_page?(topic_article_path(topic, article))
+              %li{class: klass }= link_to(article.title, topic_article_path(topic, article))
