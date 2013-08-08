@@ -71,7 +71,7 @@ module WysiwygDocs
       @article.destroy
 
       respond_to do |format|
-        format.html { redirect_to articles_url }
+        format.html { redirect_to topic_path(@article.topic) }
         format.json { head :no_content }
       end
     end
