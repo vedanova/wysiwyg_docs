@@ -5,20 +5,21 @@
     = form.submit "Save", :class => 'btn btn-primary'
 
 :javascript
+  $(function () {
+    var editor = new wysihtml5.Editor("wysihtml5-textarea", { // id of textarea element
+      toolbar:      "wysihtml5-editor-toolbar" ,
+      parserRules:  wysihtml5ParserRules
+    });
 
-  var editor = new wysihtml5.Editor("wysihtml5-textarea", { // id of textarea element
-    toolbar:      "wysihtml5-editor-toolbar" ,
-    parserRules:  wysihtml5ParserRules
-  });
+    // https://github.com/xing/wysihtml5/issues/18
+    var resizeIframe = function() {
+        editor.composer.iframe.style.height = editor.composer.element.scrollHeight + "px";
+    }
 
-  // https://github.com/xing/wysihtml5/issues/18
-  var resizeIframe = function() {
-      editor.composer.iframe.style.height = editor.composer.element.scrollHeight + "px";
-  }
-
-  editor.on("load", function() {
-    resizeIframe();
-    editor.composer.element.addEventListener("keyup", resizeIframe, false)
-    editor.composer.element.addEventListener("blur", resizeIframe, false)
-    editor.composer.element.addEventListener("focus", resizeIframe, false)
+    editor.on("load", function() {
+      resizeIframe();
+      editor.composer.element.addEventListener("keyup", resizeIframe, false)
+      editor.composer.element.addEventListener("blur", resizeIframe, false)
+      editor.composer.element.addEventListener("focus", resizeIframe, false)
+    })
   })
